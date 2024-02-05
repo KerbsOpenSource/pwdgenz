@@ -76,7 +76,7 @@ fn main() {
                 1 => password.push_str(&letter_char(Some(false))),
                 2 => password.push_str(&letter_char(Some(true))),
                 3 => password.push_str(&spec_char()),
-                4_usize.. => todo!(),
+                _ => password.push_str(&spec_char()),
             };
 
             // Update probabilities
