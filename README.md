@@ -1,4 +1,6 @@
 # pwdgenz
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/KerbsOpenSource/pwdgenz/total)  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/KerbsOpenSource/pwdgenz/release.yml)  ![GitHub last commit](https://img.shields.io/github/last-commit/KerbsOpenSource/pwdgenz)
+
 Command line password generator
 
 ## 🤔 What is this?
