@@ -44,4 +44,4 @@ cargo build -r
 
 
 ### License
-+ MIT License ([LICENSE.md](./LICENSE.md) or http://opensource.org/licenses/MIT)
++ MIT License ([LICENSE file](./LICENSE) or http://opensource.org/licenses/MIT)
