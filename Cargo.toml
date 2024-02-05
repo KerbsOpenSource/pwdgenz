@@ -1,11 +1,11 @@
 [package]
 name = "pwdgenz"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Vadim Kerbs <opensource@kerbs.dev>"]
 repository = "https://github.com/KerbsOpenSource/pwdgenz"
 readme = "README.md"
-license-file = "LICENSE.md"
+license-file = "LICENSE"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
