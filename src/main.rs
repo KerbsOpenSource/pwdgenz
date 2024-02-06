@@ -1,15 +1,14 @@
+use clap::Parser;
 use rand::distributions::{Distribution, Uniform};
 use rand::seq::SliceRandom;
 use rand::Rng;
 use rand_core::OsRng;
-use clap::Parser;
 
 const LETTERSET: [char; 26] = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 const SPECSET: [char; 5] = ['!', '@', '#', '$', '-'];
-
 
 fn number_char() -> String {
     let mut rng = OsRng;
@@ -47,7 +46,6 @@ fn char_type_choice(probs: &[f32]) -> Result<usize, &'static str> {
     Err("Invalid probability distribution")
 }
 
-
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct Cli {
@@ -58,7 +56,6 @@ struct Cli {
     #[arg(short, long, default_value_t = 1)]
     amount: u32,
 }
-
 
 fn main() {
     let cli = Cli::parse();
