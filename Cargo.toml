@@ -1,10 +1,6 @@
 [package]
 name = "pwdgenz"
-<<<<<<< HEAD
 version = "0.1.2"
-=======
-version = "0.1.1"
->>>>>>> 713ac778407293e000cae3a9c4183da0a7d75efb
 edition = "2021"
 authors = ["Vadim Kerbs <opensource@kerbs.dev>"]
 repository = "https://github.com/KerbsOpenSource/pwdgenz"
@@ -17,7 +13,4 @@ license-file = "LICENSE"
 [dependencies]
 rand = "0.8.5"
 rand_core = "0.6.4"
-<<<<<<< HEAD
 clap = { version = "4.4.18", features = ["derive"] }
-=======
->>>>>>> 713ac778407293e000cae3a9c4183da0a7d75efb
