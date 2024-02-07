@@ -1,3 +1,4 @@
+use arboard::Clipboard;
 use clap::Parser;
 use rand::distributions::{Distribution, Uniform};
 use rand::seq::SliceRandom;
@@ -55,6 +56,9 @@ struct Cli {
     /// Amount of passwords
     #[arg(short, long, default_value_t = 1)]
     amount: u32,
+    /// Save the last value to the clipboard
+    #[arg(short, long, default_value_t = false)]
+    clipboard: bool,
 }
 
 fn main() {
@@ -90,6 +94,9 @@ fn main() {
         print!("{}", password);
         if i != password_amount - 1 {
             println!();
+        } else if cli.clipboard {
+            let mut clipboard = Clipboard::new().unwrap();
+            clipboard.set_text(password).unwrap();
         }
     }
 }
