@@ -19,8 +19,9 @@ Standard password length - 16 characters
 Usage: pwdgenz [OPTIONS]
 
 Options:
-  -a, --amount <AMOUNT>  Amount of passwords [default: 1]
   -l, --length <LENGTH>  Password length [default: 16]
+  -a, --amount <AMOUNT>  Amount of passwords [default: 1]
+  -c, --clipboard        Save the last value to the clipboard
   -h, --help             Print help
   -V, --version          Print version
 ```
