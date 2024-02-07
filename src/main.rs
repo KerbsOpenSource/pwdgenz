@@ -19,7 +19,7 @@ fn number_char() -> String {
 }
 
 fn letter_char(uppercase: Option<bool>) -> String {
-    let mut rng = rand::thread_rng();
+    let mut rng = OsRng;
     let letter = LETTERSET.choose(&mut rng).unwrap();
     if let Some(true) = uppercase {
         format!("{}", letter.to_uppercase())
@@ -29,7 +29,7 @@ fn letter_char(uppercase: Option<bool>) -> String {
 }
 
 fn spec_char() -> String {
-    let mut rng = rand::thread_rng();
+    let mut rng = OsRng;
     let letter = SPECSET.choose(&mut rng).unwrap();
     format!("{}", letter)
 }
