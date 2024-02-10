@@ -87,7 +87,7 @@ fn main() {
                 _ => password.push_str(&spec_char()),
             };
 
-            // Update probabilitie.
+            // Update probabilities.
             probs[char_type] /= 2.0;
             for prob in probs.iter_mut() {
                 *prob *= 1.33;
