@@ -11,14 +11,14 @@ const LETTERSET: [char; 26] = [
 ];
 const SPECSET: [char; 5] = ['!', '@', '#', '$', '-'];
 
-fn number_char() -> String {
+fn get_random_number() -> String {
     let mut rng = OsRng;
     let dist = Uniform::from(0..=9);
     let random_num = dist.sample(&mut rng);
     format!("{}", random_num)
 }
 
-fn letter_char(uppercase: Option<bool>) -> String {
+fn get_random_letter(uppercase: Option<bool>) -> String {
     let mut rng = OsRng;
     let letter = LETTERSET.choose(&mut rng).unwrap();
     if let Some(true) = uppercase {
@@ -28,7 +28,7 @@ fn letter_char(uppercase: Option<bool>) -> String {
     }
 }
 
-fn spec_char() -> String {
+fn get_random_spec_char() -> String {
     let mut rng = OsRng;
     let letter = SPECSET.choose(&mut rng).unwrap();
     format!("{}", letter)
@@ -80,11 +80,11 @@ fn main() {
             };
 
             match char_type {
-                0 => password.push_str(&number_char()),
-                1 => password.push_str(&letter_char(Some(false))),
-                2 => password.push_str(&letter_char(Some(true))),
-                3 => password.push_str(&spec_char()),
-                _ => password.push_str(&spec_char()),
+                0 => password.push_str(&get_random_number()),
+                1 => password.push_str(&get_random_letter(Some(false))),
+                2 => password.push_str(&get_random_letter(Some(true))),
+                3 => password.push_str(&get_random_spec_char()),
+                _ => panic!("Character type selection error!"),
             };
 
             // Update probabilities.
