@@ -48,15 +48,20 @@ fn char_type_choice(probs: &[f32]) -> Result<usize, &'static str> {
 }
 
 #[derive(Parser)]
-#[command(author, version, about, long_about = None)]
+#[command(
+    author,
+    version,
+    about,
+    long_about = None,
+)]
 struct Cli {
-    /// Password length
+    /// Password length.
     #[arg(short, long, default_value_t = 16)]
     length: u32,
-    /// Amount of passwords
+    /// Amount of passwords.
     #[arg(short, long, default_value_t = 1)]
     amount: u32,
-    /// Save the last value to the clipboard
+    /// Save the last value to the clipboard.
     #[arg(short, long, default_value_t = false)]
     clipboard: bool,
 }
@@ -82,7 +87,7 @@ fn main() {
                 _ => password.push_str(&spec_char()),
             };
 
-            // Update probabilities
+            // Update probabilitie.
             probs[char_type] /= 2.0;
             for prob in probs.iter_mut() {
                 *prob *= 1.33;
