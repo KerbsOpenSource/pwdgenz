@@ -15,7 +15,7 @@ fn get_random_number() -> String {
     let mut rng = OsRng;
     let dist = Uniform::from(0..=9);
     let random_num = dist.sample(&mut rng);
-    format!("{}", random_num)
+    format!("{random_num}")
 }
 
 fn get_random_letter(uppercase: Option<bool>) -> String {
@@ -24,14 +24,14 @@ fn get_random_letter(uppercase: Option<bool>) -> String {
     if let Some(true) = uppercase {
         format!("{}", letter.to_uppercase())
     } else {
-        format!("{}", letter)
+        format!("{letter}")
     }
 }
 
 fn get_random_spec_char() -> String {
     let mut rng = OsRng;
     let letter = SPECSET.choose(&mut rng).unwrap();
-    format!("{}", letter)
+    format!("{letter}")
 }
 
 fn char_type_choice(probs: &[f32]) -> Result<usize, &'static str> {
@@ -72,7 +72,7 @@ fn main() {
     let char_length: u32 = cli.length;
     let mut probs = vec![0.32, 0.32, 0.32, 0.04];
     for i in 0..password_amount {
-        let mut password = String::from("");
+        let mut password = String::new();
         for _ in 0..char_length {
             let char_type = match char_type_choice(&probs) {
                 Ok(i) => i,
@@ -89,14 +89,14 @@ fn main() {
 
             // Update probabilities.
             probs[char_type] /= 2.0;
-            for prob in probs.iter_mut() {
+            for prob in &mut probs {
                 *prob *= 1.33;
                 if *prob > 1.0 {
                     *prob = 1.0;
                 }
             }
         }
-        print!("{}", password);
+        print!("{password}");
         if i != password_amount - 1 {
             println!();
         } else if cli.clipboard {
