@@ -1,6 +1,6 @@
 [package]
 name = "pwdgenz"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 authors = ["Vadim Kerbs <opensource@kerbs.dev>"]
 repository = "https://github.com/KerbsOpenSource/pwdgenz"
@@ -20,3 +20,4 @@ arboard = "3.3.0"
 strip = true
 lto = true
 panic = "abort"
+codegen-units=1
