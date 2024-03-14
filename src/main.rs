@@ -96,7 +96,7 @@ fn main() {
                 }
             }
         }
-        print!("{password}");
+        println!("{password}");
         if i != password_amount - 1 {
             println!();
         } else if cli.clipboard {
