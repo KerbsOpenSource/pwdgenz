@@ -71,7 +71,7 @@ fn main() {
     let password_amount: u32 = cli.amount;
     let char_length: u32 = cli.length;
     let mut probs = vec![0.32, 0.32, 0.32, 0.04];
-    for i in 0..password_amount {
+    for _ in 0..password_amount {
         let mut password = String::new();
         for _ in 0..char_length {
             let char_type = match char_type_choice(&probs) {
@@ -97,9 +97,7 @@ fn main() {
             }
         }
         println!("{password}");
-        if i != password_amount - 1 {
-            println!();
-        } else if cli.clipboard {
+        if cli.clipboard {
             let mut clipboard = Clipboard::new().unwrap();
             clipboard.set_text(password).unwrap();
         }
